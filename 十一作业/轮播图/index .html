@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>轮播图</title>
+		<style type="text/css">
+			body{
+				text-align:center;
+			}
+			img{
+				margin-left:5px;
+			}
+			#picScroll{
+				margin:0 auto;
+				border:1px solid black;
+				white-space:nowrap; 
+				overflow:hidden;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var speed = 1;
+				picScroll = document.getElementById("picScroll");
+				picScroll1 = document.getElementById("picScroll1");
+				picscroll2 = document.getElementById("picScroll2");
+
+				picscroll2.innerHTML = picScroll1.innerHTML;
+
+				var ID=setInterval(changeToLeft,speed);
+
+				picScroll.onmouseover=function() {
+					clearInterval(ID);
+				}
+				picScroll.onmouseout=function() {
+					ID=setInterval(changeToLeft,speed);
+				}
+
+			};
+			function changeToLeft(){
+	
+				if(picScroll.scrollLeft >= (picScroll1.offsetWidth)){
+					picScroll.scrollLeft = 0;
+				}
+				else{
+					picScroll.scrollLeft += 1;
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="picScroll">
+		<span id="picScroll1">
+			<img src="images/1.jpg" />
+			<img src="images/2.jpg" />
+			<img src="images/3.jpg" />
+			<img src="images/4.jpg" />
+			<img src="images/5.jpg" />
+			<img src="images/6.jpg" />
+			<img src="images/7.jpg" />
+			<img src="images/8.jpg" />
+			<img src="images/9.jpg" />
+		</span>
+		<span id="picScroll2"></span>
+		</div> 
+	</body>
+</html>
