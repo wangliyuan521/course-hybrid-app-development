@@ -1,0 +1,32 @@
+<div id="container">
+  <ul>
+    <li *ngFor="let course of courses;">
+      <a [routerLink]="['/shequ',course.id]">
+        <img src="{{course.images}}" alt="">
+        <h3>{{course.courseName}}</h3>
+        <p>{{course.courseinstrintroduction}}</p>
+        <div>
+          <span>阅读{{}}</span>
+          <span>评论{{}}</span>
+        </div>
+      </a>
+    </li>
+  </ul>
+
+</div>
+<div id="right">
+  <h2>热门话题</h2>
+  <hr>
+  <ul>
+    <li>#2015级程序设计基础...# 6万</li>
+    <li>#2015级面向对象程序...# 3万</li>
+    <li>#cms与模板制作# 3万</li>
+    <li>#数据结构# 3万</li>
+    <li>#数据库原理（5,6）...# 2万</li>
+    <li>#2014级PHP程序设计...# 2万</li>
+    <li>#web开发（二）2015...# 1万</li>
+    <li>#数据库系统概论...# 1万</li>
+    <li>#web开发（二）2016...# 1万</li>
+    <li>#web开发（二）2017...# 1万</li>
+  </ul>
+</div>
